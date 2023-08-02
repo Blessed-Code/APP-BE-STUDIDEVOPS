@@ -6,14 +6,11 @@ const port = 3000;
 // App
 const app = express();
 
-// Morgan
 app.use(morgan("tiny"));
-
-// First route
-app.get("/", (req, res) => {
-    res.json({ message: "Hello world!" });
-});
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(require("./routes/index.route"));
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+    console.log(`Example app listening on port ${port}`);
+});
