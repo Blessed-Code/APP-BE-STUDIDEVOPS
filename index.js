@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(require("./routes/index.route"));
 
+// testing github action
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });

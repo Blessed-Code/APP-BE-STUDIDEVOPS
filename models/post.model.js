@@ -1,7 +1,7 @@
 const filename = "../data/posts.json";
-let posts = require(filename);
 const writeFilePath = "data/posts.json";
 const helper = require("../helpers/helper");
+let posts = require(filename);
 
 function getPosts() {
     return new Promise((resolve, reject) => {
