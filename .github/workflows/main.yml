@@ -1,0 +1,26 @@
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    name: build application
+    runs-on: ubuntu-latest
+    steps:
+    - name: menampilkan text
+      run: echo "ini step untuk build aplikasi"
+
+  test:
+    name: test application
+    runs-on: ubuntu-latest
+    steps:
+    - name: menampilkan text
+      run: echo "ini step untuk test aplikasi"
+
+  deploy:
+    name: deploy application
+    runs-on: ubuntu-latest
+    steps:
+    - name: menampilkan text
+      run: echo "ini step untuk deploy aplikasi"
