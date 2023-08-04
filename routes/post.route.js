@@ -15,18 +15,18 @@ router.get("/", async (req, res) => {
     });
 });
 
-router.get("/:id", m.mustBeInteger, async (req, res) => {
-    const id = req.params.id
-    await post.getPost(id)
-    .then(post => res.json(post))
-    .catch(err => {
-        if (err.status) {
-            res.status(err.status).json({ message: err.message });
-        } else {
-            res.status(500).json({ message: err.message });
-        }
-    });
-});
+// router.get("/:id", m.mustBeInteger, async (req, res) => {
+//     const id = req.params.id
+//     await post.getPost(id)
+//     .then(post => res.json(post))
+//     .catch(err => {
+//         if (err.status) {
+//             res.status(err.status).json({ message: err.message });
+//         } else {
+//             res.status(500).json({ message: err.message });
+//         }
+//     });
+// });
 
 router.post('/', m.checkFieldsPosts, async (req, res) => {
     await post.insertPost(req.body)
