@@ -35,4 +35,10 @@ jobs:
         port: 22
         script: |
           ssh-keyscan -H github.com >> ~/.ssh/known_hosts
+          rm -rf APP-BE-STUDIDEVOPS
           git clone git@github.com:Blessed-Code/APP-BE-STUDIDEVOPS.git
+          cd APP-BE-STUDIDEVOPS
+          npm install
+          node index.js
+          sudo service nginx restart
+
